@@ -8,7 +8,6 @@ const cors = require('cors')
 require('./config/mongooseConnect')
 
 const app = express()
-const indexRoute = require('./routes/index')
 
 const PORT = process.env.PORT || 3000
 
@@ -16,8 +15,6 @@ const PORT = process.env.PORT || 3000
 app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
-
-app.use('/', indexRoute)
 
 // main routes
 app.use('/', routes)
