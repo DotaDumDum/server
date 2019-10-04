@@ -1,7 +1,8 @@
 const axios = require('axios')
 
 const instance = axios.create({
-  baseURL: 'https://api.opendota.com/api'
+  baseURL: 'https://apis.paralleldots.com/v5',
+  
 })
 
 
