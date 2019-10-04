@@ -65,6 +65,16 @@ class UserController {
             })
             .catch(next);
     }
+
+    static addFavorite(req, res, next) {
+        let { favoriteHeros } = req.body
+        let { id } = req.decode
+        User.findByIdAndUpdate(id, { $push: { favoriteHeros } })
+            .then(user => {
+                res.status(200).json(user)
+            })
+            .catch(next);
+    }
 }
 
 module.exports = UserController
