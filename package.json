@@ -23,7 +23,11 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "google-auth-library": "^5.3.0",
+<<<<<<< HEAD
     "googleapis": "^43.0.0",
+=======
+    "jsonwebtoken": "^8.5.1",
+>>>>>>> f9e224a88e913612771706c142ff4137bf110c8f
     "mongoose": "^5.7.3"
   },
   "devDependencies": {
