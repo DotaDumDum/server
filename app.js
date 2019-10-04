@@ -1,5 +1,6 @@
 if(process.env.NODE_ENV === 'development') require('dotenv').config()
 
+const errorHandler = require('./middlewares/errorHandler')
 const express = require('express')
 const routes = require('./routes')
 const cors = require('cors')
@@ -18,5 +19,7 @@ app.use(express.json())
 // main routes
 app.use('/', routes)
 
-// init app
+//Error handler
+app.use(errorHandler)
+
 app.listen(PORT, () => console.log('SERVER LISTENING ON PORT ', PORT))

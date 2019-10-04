@@ -44,8 +44,8 @@ class UserController {
             idToken: req.body.id_token,
             audience: process.env.GOOGLE_CLIENT_ID
         })
-            .then(tiket => {
-                payload = tiket.getPayload()
+            .then(ticket => {
+                payload = ticket.getPayload()
                 return User.findOne({ email: payload.email })
             })
             .then((user) => {
@@ -53,7 +53,7 @@ class UserController {
                     return user
                 } else {
                     return User.create({
-                        fullname: payload.name,
+                        username: payload.name,
                         email: payload.email
                     })
                 }
