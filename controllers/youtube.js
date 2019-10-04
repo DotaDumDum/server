@@ -24,7 +24,7 @@ class YoutubeController {
           },
           "videoId": req.body.videoId
         }
-      }  
+      }
         youtubeAPI.post(`commentThreads?part=snippet`,packet)
         .then(({data})=>{
             res.status(200).json(data)
